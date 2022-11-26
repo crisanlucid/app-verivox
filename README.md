@@ -20,7 +20,7 @@
 - [x] [t-4] Dockerize backend and put config using ENV
 - [x] [t-5] Start project on localhost in watchmode
 - [x] [t-6] Create endpoint 'products'
-- [ ] [t-7] [fix]Config nestjs project to support .env file
+- [x] [t-7] [fix]Config nestjs project to support .env file
 - [ ] [t-8] Install Swagger for endpoint 'products'
 
 ## Checking
@@ -57,4 +57,23 @@ yarn start:dev
 
 ### [t-6] Create endpoint 'products'
 
-check endpoint link [products](http://localhost:3000/products)
+check endpoint link [products](http://localhost:3001/products)
+
+### [t-7] [fix]Config nestjs project to support .env file
+
+1. Start from root project
+
+```
+cd backend
+
+yarn start:dev
+```
+
+2. Create .env file and put:
+
+```
+PORT=3001
+```
+
+3. Check the link [localhost](http://localhost:3001/) => ok
+4. Check the previews [localhost](http://localhost:3000/) => should fail
