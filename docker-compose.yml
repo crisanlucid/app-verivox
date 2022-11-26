@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  backend:
+    build: ./backend
+    container_name: verivox-api
+    ports:
+      - 3001:3001
+    environment:
+      PORT: 3001

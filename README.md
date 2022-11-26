@@ -17,20 +17,28 @@
 - [x] [t-1] Use yarn and install nestjs/cli
 - [x] [t-2] Init project with NestJS
 - [x] [t-3] Setup github repository sync with localhost
-- [ ] [t-4] Dockerize backend
+- [x] [t-4] Dockerize backend and put config using ENV
 
 ## Checking
 
-[t-1] check yarn, nest version
+### [t-1] check yarn, nest version
 
 ```
 nest -v
 yarn -v
 ```
 
-[t-3] git push code into github repository
+### [t-3] git push code into github repository
 
 ```
 git checkout main
 git push
 ```
+
+### [t-4] Dockerize backend and put config using ENV
+
+```
+docker-compose up
+```
+
+check link [backend](http://localhost:3001)
