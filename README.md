@@ -21,7 +21,7 @@
 - [x] [t-5] Start project on localhost in watchmode
 - [x] [t-6] Create endpoint 'products'
 - [x] [t-7] [fix]Config nestjs project to support .env file
-- [ ] [t-8] Install Swagger for endpoint 'products'
+- [x] [t-8] Install Swagger for endpoint 'products'
 
 ## Checking
 
