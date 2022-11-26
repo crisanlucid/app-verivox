@@ -27,3 +27,10 @@
 nest -v
 yarn -v
 ```
+
+[t-3] git push code into github repository
+
+```
+git checkout main
+git push
+```
