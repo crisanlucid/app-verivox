@@ -16,6 +16,7 @@
 
 - [x] [t-1] Use yarn and install nestjs/cli
 - [x] [t-2] Init project with NestJS
+- [x] [t-2] Setup github repository sync with localhost
 - [ ] [t-3] Dockerize backend
 
 ## Checking
