@@ -19,8 +19,9 @@
 - [x] [t-3] Setup github repository sync with localhost
 - [x] [t-4] Dockerize backend and put config using ENV
 - [x] [t-5] Start project on localhost in watchmode
-- [ ] [t-6] Create endpoint 'products'
-- [ ] [t-7] Install Swagger for endpoint 'products'
+- [x] [t-6] Create endpoint 'products'
+- [ ] [t-7] [fix]Config nestjs project to support .env file
+- [ ] [t-8] Install Swagger for endpoint 'products'
 
 ## Checking
 
@@ -45,3 +46,15 @@ docker-compose up
 ```
 
 check link [backend](http://localhost:3001)
+
+### [t-5] Start project on localhost in watchmode
+
+```
+cd backend
+
+yarn start:dev
+```
+
+### [t-6] Create endpoint 'products'
+
+check endpoint link [products](http://localhost:3000/products)
