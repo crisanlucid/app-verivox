@@ -18,6 +18,9 @@
 - [x] [t-2] Init project with NestJS
 - [x] [t-3] Setup github repository sync with localhost
 - [x] [t-4] Dockerize backend and put config using ENV
+- [x] [t-5] Start project on localhost in watchmode
+- [ ] [t-6] Create endpoint 'products'
+- [ ] [t-7] Install Swagger for endpoint 'products'
 
 ## Checking
 
