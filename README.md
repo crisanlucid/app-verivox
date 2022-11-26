@@ -22,6 +22,7 @@
 - [x] [t-6] Create endpoint 'products'
 - [x] [t-7] [fix]Config nestjs project to support .env file
 - [x] [t-8] Install Swagger for endpoint 'products'
+- [x] [t-9] clean up app
 
 ## Checking
 
