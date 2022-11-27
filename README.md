@@ -23,6 +23,8 @@
 - [x] [t-7] [fix]Config nestjs project to support .env file
 - [x] [t-8] Install Swagger for endpoint 'products'
 - [x] [t-9] clean up app
+- [x] [t-10] Add dummy response for Product Service and fix tests
+- [ ] [t-11] Add filters: consumption and order
 
 ## Checking
 
@@ -78,3 +80,32 @@ PORT=3001
 
 3. Check the link [localhost](http://localhost:3001/) => ok
 4. Check the previews [localhost](http://localhost:3000/) => should fail
+
+### [t-10] Add dummy response for Product Service and fix tests
+
+1. Check tests
+
+```
+cd backend
+yarn test
+```
+
+2. Check response
+
+```
+const productsMock = [
+  {
+    id: 1,
+    name: 'basic electricity tariff',
+    annualCost: 770,
+    currency: 'Eur',
+  },
+  {
+    id: 2,
+    name: 'Package tariff',
+    annualCost: 800,
+    currency: 'Eur',
+  },
+];
+
+```
