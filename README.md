@@ -30,8 +30,9 @@
 - [x] [t-11-d] fix tests
 - [x] [t-12] Create TDD for Service: **PromoTypeAService**
 - [x] [t-13] Create TDD for Service: **PromoTypeBService**
-- [ ] [t-14] Functionality Test Endpoint
-- [ ] [t-15] Sorting Result filter by Order: ASC, DESC
+- [x] [t-14] Functionality Service with Integration tests
+- [ ] [t-15] E2E for endpoint "products"
+- [ ] [t-16] Sorting Result filter by Order: ASC, DESC
 
 ## Checking
 
@@ -200,4 +201,10 @@ annual_cost = 1400
 
 ```
 # productsPromoB.service.spec.ts
+```
+
+### [t-14] Functionality Service with Integration tests
+
+```
+yarn test:int
 ```
