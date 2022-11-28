@@ -39,7 +39,6 @@ export class ProductsService {
     );
     //merge result
     return [getPromotionServiceA, getPromotionsServiceB];
-    // return [...productsMock];
   }
 
   findAll(): IProduct[] {

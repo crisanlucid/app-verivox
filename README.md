@@ -31,7 +31,7 @@
 - [x] [t-12] Create TDD for Service: **PromoTypeAService**
 - [x] [t-13] Create TDD for Service: **PromoTypeBService**
 - [x] [t-14] Functionality Service with Integration tests
-- [ ] [t-15] E2E for endpoint "products"
+- [x] [t-15] E2E for endpoint "products"
 - [ ] [t-16] Sorting Result filter by Order: ASC, DESC
 
 ## Checking
@@ -207,4 +207,14 @@ annual_cost = 1400
 
 ```
 yarn test:int
+```
+
+### [t-15] E2E for endpoint "products"
+
+1. check if the query in the link is correct 'products?consumption=6000&order=asc'
+
+2. run e2e test
+
+```
+yarn test:e2e
 ```
