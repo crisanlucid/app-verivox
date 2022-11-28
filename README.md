@@ -28,7 +28,8 @@
 - [x] [t-11-b] Create Types, interface, Class for Product
 - [x] [t-11-c] Create/Register Services: **PromoTypeAService** && **PromoTypeBService** and inject into Service "ProductsService"
 - [x] [t-11-d] fix tests
-- [] [t-12] Create TDD for Service: **PromoTypeAService**
+- [x] [t-12] Create TDD for Service: **PromoTypeAService**
+- [] [t-13] Create TDD for Service: **PromoTypeBService**
 
 ## Checking
 
@@ -138,4 +139,33 @@ each module has own DTO, entity
 
 ```
 yarn test
+```
+
+### [t-12] Create TDD for Service: **PromoTypeAService**
+
+1.  - check formula
+    - don`t use float number
+    - final result will be provided in euro
+
+```
+input = 3500
+annual_cost = base_cost(60) + (input(3500) * 22 cent)/100
+annual_cost = 60 + 770
+annual_cost = 830
+
+input = 4500
+annual_cost = base_cost(60) + (input(4500) * 22 cent)/100
+annual_cost = 60 + 990
+annual_cost = 1050
+
+input = 6000
+annual_cost = base_cost(60) + (input(6000) * 22 cent)/100
+annual_cost = 60 + 1320
+annual_cost = 1380
+```
+
+2. Check uses cases in test to respect formula
+
+```
+# productsPromoA.service.spec.ts
 ```
