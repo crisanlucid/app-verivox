@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { GetProductsFilterDto, IProduct } from './dto';
+import { GetProductsFilterDto, IProduct, orderType } from './dto';
 import { PromoTypeAService } from './productsPromoA.service';
 import { PromoTypeBService } from './productsPromoB.service';
 
 const productsMock = [
   {
     id: 1,
-    name: 'basic electricity tariff',
+    name: '[mock]basic electricity tariff',
     annualCost: 770,
     currency: 'Eur',
   },
@@ -28,7 +28,7 @@ export class ProductsService {
     filterDto: GetProductsFilterDto,
   ): Promise<IProduct[]> {
     //get filter comsumption
-    const { consumption } = filterDto;
+    const { consumption, order } = filterDto;
     //getPromotionServiceA
     const getPromotionServiceA = await this.promotionServiceA.calculatePromo(
       Number(consumption),
@@ -38,10 +38,28 @@ export class ProductsService {
       Number(consumption),
     );
     //merge result
-    return [getPromotionServiceA, getPromotionsServiceB];
+    const res = [getPromotionServiceA, getPromotionsServiceB];
+
+    return this.orderBy(res, order);
   }
 
-  findAll(): IProduct[] {
-    return [...productsMock];
+  async findAll(filterDto: GetProductsFilterDto): Promise<IProduct[]> {
+    const { order } = filterDto;
+    return this.orderBy([...productsMock], order);
+  }
+
+  orderBy(listProduct, order): IProduct[] {
+    if (order === orderType.ASC) {
+      return listProduct.sort((first, next) =>
+        first.annualCost > next.annualCost ? 1 : -1,
+      );
+    }
+    if (order === orderType.DESC) {
+      return listProduct.sort((first, next) =>
+        first.annualCost > next.annualCost ? -1 : 1,
+      );
+    }
+
+    return listProduct;
   }
 }

@@ -21,8 +21,8 @@ describe('ProductService Integration', () => {
       const response = await service.findAllByConsumption(mockFilter);
 
       expect(response).toHaveLength(2);
-      expect(response[0].annualCost).toBe(830);
-      expect(response[1].annualCost).toBe(800);
+      expect(response[0].annualCost).toBe(800);
+      expect(response[1].annualCost).toBe(830);
     });
   });
 });

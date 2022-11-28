@@ -32,7 +32,7 @@
 - [x] [t-13] Create TDD for Service: **PromoTypeBService**
 - [x] [t-14] Functionality Service with Integration tests
 - [x] [t-15] E2E for endpoint "products"
-- [ ] [t-16] Sorting Result filter by Order: ASC, DESC
+- [x] [t-16] Sorting Result filter by Order: ASC, DESC
 
 ## Checking
 
@@ -216,5 +216,16 @@ yarn test:int
 2. run e2e test
 
 ```
+yarn test:e2e
+```
+
+### [t-16] Sorting Result filter by Order: ASC, DESC
+
+1. double check function ProductsService->orderBy
+2. run unit, integration, e2e tests
+
+```
+yarn test:int
+yarn test:int
 yarn test:e2e
 ```

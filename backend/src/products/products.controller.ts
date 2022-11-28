@@ -19,6 +19,6 @@ export class ProductsController {
       return this.productsService.findAllByConsumption(filterDto);
     }
 
-    return this.productsService.findAll();
+    return this.productsService.findAll(filterDto);
   }
 }
