@@ -29,7 +29,9 @@
 - [x] [t-11-c] Create/Register Services: **PromoTypeAService** && **PromoTypeBService** and inject into Service "ProductsService"
 - [x] [t-11-d] fix tests
 - [x] [t-12] Create TDD for Service: **PromoTypeAService**
-- [] [t-13] Create TDD for Service: **PromoTypeBService**
+- [x] [t-13] Create TDD for Service: **PromoTypeBService**
+- [ ] [t-14] Functionality Test Endpoint
+- [ ] [t-15] Sorting Result filter by Order: ASC, DESC
 
 ## Checking
 
@@ -168,4 +170,34 @@ annual_cost = 1380
 
 ```
 # productsPromoA.service.spec.ts
+```
+
+### [t-13] Create TDD for Service: **PromoTypeBService**
+
+1.  - check formula
+    - don`t use float number
+    - final result will be provided in euro
+
+```
+input = 3500
+if input <= 4000
+annual_cost = 800
+
+input = 4500
+if input > 4000
+annual_cost = base_cost(800) + (input(4500-4000) * 30 cent)/100
+annual_cost = 800 + 150
+annual_cost = 950
+
+input = 6000
+if input > 4000
+annual_cost = base_cost(800) + (input(6000-4000) * 30 cent)/100
+annual_cost = 800 + 600
+annual_cost = 1400
+```
+
+2. Check uses cases in test to respect formula
+
+```
+# productsPromoB.service.spec.ts
 ```
