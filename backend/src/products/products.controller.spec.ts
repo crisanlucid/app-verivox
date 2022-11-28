@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { GetProductsFilterDto, orderType } from './dto';
 import { ProductsController } from './products.controller';
 import { ProductsService } from './products.service';
 
@@ -9,7 +10,15 @@ describe('ProductsController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [ProductsController],
-      providers: [ProductsService],
+      providers: [
+        ProductsService,
+        {
+          provide: ProductsService,
+          useValue: {
+            findAllByConsumption: jest.fn(),
+          },
+        },
+      ],
     }).compile();
 
     service = module.get<ProductsService>(ProductsService);
@@ -17,11 +26,11 @@ describe('ProductsController', () => {
   });
 
   it('should be defined', () => {
-    expect(controller).toBeDefined();
+    expect(controller).toBeDefined(); //
   });
 
   it('should return an array of products', async () => {
-    const result = [
+    const result = async () => [
       {
         id: 1,
         name: 'basic electricity tariff',
@@ -29,10 +38,16 @@ describe('ProductsController', () => {
         currency: 'Eur',
       },
     ];
+    const mockFilter: GetProductsFilterDto = {
+      consumption: '1222',
+      order: orderType.ASC,
+    };
     jest
       .spyOn(service, 'findAllByConsumption')
-      .mockImplementation(() => result);
+      .mockImplementation(() => result());
 
-    expect(await controller.findAllByConsumption()).toBe(result);
+    const response = await controller.findAllByConsumption(mockFilter);
+
+    expect(response).toStrictEqual(await result());
   });
 });

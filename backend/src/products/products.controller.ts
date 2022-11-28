@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
+import { GetProductsFilterDto, IProduct } from './dto';
 import { ProductsService } from './products.service';
 
 @Controller('products')
@@ -6,7 +7,15 @@ export class ProductsController {
   constructor(private productsService: ProductsService) {}
 
   @Get()
-  async findAllByConsumption(): Promise<any[]> {
-    return this.productsService.findAllByConsumption();
+  async findAllByConsumption(
+    @Query()
+    filterDto: GetProductsFilterDto,
+  ): Promise<IProduct[]> {
+    console.log({
+      filterDto,
+    });
+
+    return this.productsService.findAllByConsumption(filterDto);
+    // return this.productsService.findAll();
   }
 }

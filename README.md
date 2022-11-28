@@ -24,7 +24,11 @@
 - [x] [t-8] Install Swagger for endpoint 'products'
 - [x] [t-9] clean up app
 - [x] [t-10] Add dummy response for Product Service and fix tests
-- [ ] [t-11] Add filters: consumption and order
+- [x] [t-11-a] Add filters: consumption and order
+- [x] [t-11-b] Create Types, interface, Class for Product
+- [x] [t-11-c] Create/Register Services: **PromoTypeAService** && **PromoTypeBService** and inject into Service "ProductsService"
+- [x] [t-11-d] fix tests
+- [] [t-12] Create TDD for Service: **PromoTypeAService**
 
 ## Checking
 
@@ -107,5 +111,31 @@ const productsMock = [
     currency: 'Eur',
   },
 ];
+```
 
+### [t-11-a] Add filters: consumption and order
+
+1. check link:
+
+http://localhost:3001/products?comsuption=1222&order=asc
+
+2. look in the console from the server
+
+```
+{ filterDto: { consumption: '1222', order: 'asc' }}
+
+```
+
+### [t-11-b] Create Types, interface, Class for Product
+
+each module has own DTO, entity
+
+```
+# ./src/products/dto
+```
+
+### [t-11-d] fix tests
+
+```
+yarn test
 ```
