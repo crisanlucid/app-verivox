@@ -12,6 +12,71 @@
 
 # Verivox
 
+## How to use
+
+### Localhost
+
+1. Run project with **npm** or [**yarn**](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable])
+
+```
+node -v #v18.10
+cd backend
+```
+
+npm
+
+```
+npm -v #v8.19
+npm i
+npm run start
+```
+
+yarn
+
+```
+yarn -v #v1.22.19
+yarn
+yarn start
+```
+
+2. Go to: http://localhost:3001/products?consumption=3500&order=asc
+
+### Using Docker Container/Compose
+
+1. check version and build
+
+```
+#Docker version 20.10.21
+docker version
+
+#Docker Compose version v2.10.2
+docker compose version
+
+#start
+docker compose up
+```
+
+2. Use the link http://localhost:3001/products?consumption=3500&order=asc
+
+response
+
+```json
+[
+  {
+    id: 2,
+    name: "Package tariff",
+    annualCost: 800,
+    currency: "Eur",
+  },
+  {
+    id: 1,
+    name: "basic electricity tariff",
+    annualCost: 830,
+    currency: "Eur",
+  },
+];
+```
+
 ## Task Lists
 
 - [x] [t-1] Use yarn and install nestjs/cli
