@@ -12,7 +12,80 @@
 
 # Verivox
 
-## Task Lists
+a project in greenfield
+
+## Table of Contents
+
+- [How to run](#how-to-run)
+- [Tasks List](#tasks-list)
+- [Checking](#checking)
+
+## How to Run
+
+### Project in Localhost
+
+1. Run project with **npm** or [**yarn**](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable])
+
+```
+node -v #v18.10
+cd backend
+```
+
+npm
+
+```
+npm -v #v8.19
+npm i
+npm run start
+```
+
+yarn
+
+```
+yarn -v #v1.22.19
+yarn
+yarn start
+```
+
+2. Go to: http://localhost:3001/products?consumption=3500&order=asc
+
+### Using Docker and Docker Compose
+
+1. Check version and build
+
+```
+#Docker version 20.10.21
+docker version
+
+#Docker Compose version v2.10.2
+docker compose version
+
+#build
+docker compose up
+```
+
+2. Use the link http://localhost:3001/products?consumption=3500&order=asc
+
+response
+
+```json
+[
+  {
+    "id": 2,
+    "name": "Package tariff",
+    "annualCost": 800,
+    "currency": "Eur"
+  },
+  {
+    "id": 1,
+    "name": "basic electricity tariff",
+    "annualCost": 830,
+    "currency": "Eur"
+  }
+]
+```
+
+## Tasks List
 
 - [x] [t-1] Use yarn and install nestjs/cli
 - [x] [t-2] Init project with NestJS
